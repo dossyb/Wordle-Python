@@ -1,2 +1,4 @@
 # Wordle-Python
- A Wordle clone that runs in the terminal written in Python
+ A Wordle clone that runs in a terminal written in Python.
+
+ Game is functional.
