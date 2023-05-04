@@ -2,12 +2,12 @@ import sys
 import random
 from termcolor import colored
 
-def guess_wordle(attempts):
+def guess_wordle(attempts, wordlist):
     print("\n")
     print("Enter your guess (", attempts, "remaining ): ")
     guess = input()
     length = len(guess)
-    while length != 5:
+    while length != 5 or guess not in wordlist:
         print("Please enter a valid guess: ")
         guess = input() 
         length = len(guess)
@@ -54,7 +54,7 @@ def game_loop(wordlist):
 
     attempts = 6
     while attempts != 0:
-        guess = guess_wordle(attempts)
+        guess = guess_wordle(attempts, wordlist)
             
         evaluate_attempt(guess, word)
         attempts -= 1
